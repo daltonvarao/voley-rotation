@@ -1,0 +1,163 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+}
+
+html,
+body,
+#app {
+  height: 100%;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: .7;
+}
+
+#app {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  background-color: mediumseagreen;
+}
+
+#title-container {
+  margin-bottom: 2rem;
+  width: 360px;
+}
+
+#title {
+  color: #fff;
+}
+
+#control-panel {
+  width: 360px;
+  margin-bottom: 8px;
+}
+
+#control-panel button {
+  padding: 8px 16px;
+  background: #fff;
+  color: black;
+  border: 0;
+  border-radius: 4px;
+}
+
+#court {
+  width: 360px;
+  height: 360px;
+  position: relative;
+  background: coral;
+  border: 5px solid #fff;
+}
+
+#line-3meters {
+  position: absolute;
+  top: 120px;
+  border: 3px solid white;
+  width: 355px;
+}
+
+#dragzone {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 360px;
+  height: 360px;
+  z-index: 10;
+}
+
+#attack-area {
+  background: coral;
+  height: 120px;
+  z-index: 5;
+  border-bottom: 5px solid white;
+}
+
+#defense-area {
+  background: cornflowerblue;
+  height: 300px;
+  z-index: 5;
+}
+
+.player {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  top: 10px;
+  color: black;
+  transition: all .1s;
+  cursor: grab;
+  box-shadow: 0 0 5px 3px rgba(0,0,0,0.05);
+}
+
+.player:hover {
+  opacity: .5;
+}
+
+.player::before {
+  content: attr(data-label);
+  position: absolute;
+  bottom:  -15px;
+  text-align: center;
+  color: black;
+  font-weight: 500;
+  font-size: 11px;
+}
+
+.player.invalid {
+  background-color: red;
+}
+
+#modal {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: none;
+}
+
+#modal-content {
+  width: 80%;
+  max-width: 420px;
+  background: #fff;
+  padding: 1rem;
+  border-radius: .5rem;
+}
+
+#modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#modal-title {
+  font-size: 20px;
+}
+
+#close-modal {
+  background: transparent;
+  font-size: 24px;
+  border: 0;
+}
+
+#modal-body {}
