@@ -151,6 +151,12 @@ export const updateHtmlRender = (player) => {
   player.htmlElement.innerText = player.rotationPosition;
   setHtmlPosition(player.htmlElement, player.position.x, player.position.y);
 
+  if ([2, 3, 4].includes(player.rotationPosition)) {
+    player.htmlElement.classList.add("attack");
+  } else {
+    player.htmlElement.classList.remove("attack");
+  }
+
   if (player.isInvalid) {
     player.htmlElement.classList.add("invalid");
   } else {

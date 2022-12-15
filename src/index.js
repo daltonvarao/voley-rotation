@@ -70,7 +70,10 @@ for (const player of playerGroup.players) {
   updateHtmlRender(player);
   court.appendChild(playerElement);
 
-  // mount config form for each player
+  mountConfigForm(player);
+}
+
+function mountConfigForm(player) {
   const configPlayerRow = document.createElement("div");
   configPlayerRow.classList.add("config-row");
 
