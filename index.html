@@ -1,21 +1,23 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Rodizio 5x1</title>
+    <title>🏐 Rodizio 5x1</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet">
   </head>
 
   <body>
     <div id="app">
       <div id="title-container">
-        <h1 id="title">Rodizio 5x1</h1>
+        <h1 id="title">🏐 Rodízio Volêi</h1>
       </div>
       <div id="control-panel">
         <button id="rotate-players">Rodar</button>
         <button id="reset-infiltration">Resetar Infiltração</button>
         <button id="initial-rotation">Posição inicial</button>
+        <button id="show-config-modal">	&#9881;</button>
+
       </div>
       <div id="court">
         <hr id="line-3meters">
@@ -24,15 +26,40 @@
       <div id="modal">
         <div id="modal-content">
           <div id="modal-header">
-            <h1 id="modal-title">Meu modal</h1>
+            <h1 id="modal-title">Configurações</h1>
             <button id="close-modal">&times;</button>
           </div>
           <div id="modal-body">
-            <div id="players-form"></div>
+            <div id="config-form"></div>
           </div>
         </div>
       </div>
+
+      <div id="footer">
+        <span>Made with ❤️ by Dalton Varão</span>
+        <div id="social-channels">
+          <a href="https://www.instagram.com/daltonvarao">
+            <i data-feather="instagram"></i>
+          </a>
+
+          <a href="https://www.linkedin.com/in/daltonvarao">
+            <i data-feather="linkedin"></i>
+          </a>
+
+          <a href="https://www.github.com/daltonvarao">
+            <i data-feather="github"></i>
+          </a>
+
+          <a href="https://www.twitter.com/daltonvarao">
+            <i data-feather="twitter"></i>
+          </a>
+        </div>
+      </div>
     </div>
+    <script src="https://unpkg.com/feather-icons"></script>
     <script src="src/index.js"></script>
+    <script>
+      feather.replace()
+    </script>
   </body>
 </html>
