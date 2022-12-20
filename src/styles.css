@@ -129,6 +129,11 @@ button:hover {
   color: #fff;
 }
 
+.player.highlight {
+  background-color: yellow;
+  color: black;
+}
+
 #modal {
   position: fixed;
   top: 0;

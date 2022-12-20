@@ -35,7 +35,6 @@ for (const player of playerGroup.players) {
 
     player.setPosition(x, y);
     playerElement.style.opacity = 1;
-    updateHtmlRender(player);
   };
 
   playerElement.ondragstart = function (ev) {
@@ -44,7 +43,6 @@ for (const player of playerGroup.players) {
 
   playerElement.ondblclick = function (ev) {
     player.resetInfiltrationPosition();
-    updateHtmlRender(player);
   };
 
   document.body.ondragover = function (ev) {
@@ -62,16 +60,24 @@ for (const player of playerGroup.players) {
 
       player.setPosition(x, y);
       playerElement.style.opacity = 1;
-      updateHtmlRender(player);
     };
   }
 
   player.setHtmlElement(playerElement);
-  updateHtmlRender(player);
   court.appendChild(playerElement);
 
   mountConfigForm(player);
 }
+
+function render() {
+  for (const player of playerGroup.players) {
+    updateHtmlRender(player);
+  }
+
+  return requestAnimationFrame(render);
+}
+
+render();
 
 function mountConfigForm(player) {
   const configPlayerRow = document.createElement("div");

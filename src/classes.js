@@ -14,6 +14,7 @@ export class Player {
   };
 
   constructor(label, rotationPosition) {
+    console.log("constructed");
     this.initialRotationPosition = rotationPosition;
     this.rotationPosition = rotationPosition;
     this.label = label;
@@ -33,6 +34,14 @@ export class Player {
         () => this.mustBeRightOf(5),
         () => this.mustBeBelowOf(3),
       ],
+    };
+    this.relationsByRotation = {
+      1: [2, 6],
+      2: [1, 3],
+      3: [4, 2, 6],
+      4: [3, 5],
+      5: [4, 6],
+      6: [1, 5, 3],
     };
     this.resetInfiltrationPosition();
   }
@@ -122,21 +131,18 @@ export class PlayerGroup {
   rotateOnePositionEach() {
     this.players.forEach((player) => {
       player.decreaseRotationByOne();
-      updateHtmlRender(player);
     });
   }
 
   resetPlayersInfiltrationPosition() {
     this.players.forEach((player) => {
       player.resetInfiltrationPosition();
-      updateHtmlRender(player);
     });
   }
 
   resetPlayersInitialPosition() {
     this.players.forEach((player) => {
       player.resetToInitialRotationPosition();
-      updateHtmlRender(player);
     });
   }
 }
